@@ -1,0 +1,10 @@
+ublic class DoCalculation {
+    
+    public void callCalculation(){
+        
+        Calculation c=new Calculation();
+        c.calculateAge(3,4);
+        
+    }
+
+}
