@@ -1,0 +1,20 @@
+public class ChildCalculator extends Calculation {
+
+    //virtual    extends  override
+    
+    public  void childMethod(){
+        system.debug('in child');
+    }
+    
+    public override Integer printSum(Integer x1,Integer x2,Integer x3){
+        
+          Integer var3;
+         var1=x1;
+        var2=x2;
+        var3=x3;
+      Integer  total=var1+var2+var3;
+        
+       system.debug('Total:::'+total); 
+        return total;
+    }
+}
