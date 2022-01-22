@@ -1,0 +1,8 @@
+//ChildCalculator c1= new ChildCalculator();
+//c1.printSum(1,2,3);
+//c1.printAge(6);
+//system.debug('sum is:::'+res);
+
+Calculation c = new ChildCalculator();
+Calculation c = new Calculation();
+c.printSum(1,2,3);
