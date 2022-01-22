@@ -1,0 +1,39 @@
+public class PolymorphismExample {
+
+    public Integer var1;
+    public Integer var2;
+    
+    public PolymorphismExample(){system.debug('Inside 0 arg constructor:::');}
+        public PolymorphismExample(Integer x){system.debug('Inside  1 arg constructor:::');}
+    public PolymorphismExample(Integer x,Integer y){ system.debug('Inside  2 arg constructor:::');}
+    
+    
+    
+    public  Integer printSum(Integer x1,Integer x2,Integer x3){
+       
+        
+        
+        Integer var3;
+         var1=x1;
+        var2=x2;
+        var3=x3;
+        
+        Integer total3=var1+var2+var3;
+                system.debug('sum is:::'+total3);
+       return var1+var2+var3; 
+    }
+    
+        public  Integer printSum(Integer x1,Integer x2){
+       
+        
+        
+        Integer var3;
+         var1=x1;
+        var2=x2;
+       
+            Integer total2=var1+var2; 
+        system.debug('sum is:::'+total2);
+        
+       return var1+var2; 
+    }
+}
