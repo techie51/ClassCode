@@ -1,0 +1,30 @@
+public class StaticExample {
+
+    public static integer dollarRate;
+    public Integer age;
+    
+    public void printDetails(){
+       system.debug('dollarRate is:::'+dollarRate); 
+        system.debug('age is:::'+age);
+    }
+    
+    public static void printMe(){
+        system.debug('In static dollarRate is:::'+dollarRate);
+       // system.debug('age is:::'+age);
+    }
+}
+
+///ExecuteAnonymous
+
+
+StaticExample.dollarRate=80;
+StaticExample c = new StaticExample();
+c.age=10;
+c.printDetails();
+
+StaticExample c1 = new StaticExample();
+c1.age=15;
+c1.printDetails();
+
+
+StaticExample.printMe();
