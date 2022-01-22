@@ -1,0 +1,15 @@
+public class ApexProperties {
+
+    //encapsulation
+    
+    private Integer age;
+    
+    public void setAge(Integer x){
+        this.age=x;
+    }
+        
+       public integer getAge(){
+           
+           return age;
+        }
+}
