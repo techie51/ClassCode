@@ -13,3 +13,10 @@ public class ApexProperties {
            return age;
         }
 }
+
+
+///ExecuteAnonymous
+ApexProperties c = new ApexProperties();
+c.age=30;
+c.setAge(25);
+Integer age1=c.getAge();
