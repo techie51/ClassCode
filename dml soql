@@ -1,0 +1,91 @@
+public class DmlExample {
+    
+    //DML  SOQl   SOSL
+    //
+    //DML --- insert,update,delete,Upsert,merge
+
+    //sObject
+    
+    public void createSingleCourse(){
+        
+        Course__c c= new Course__c(Name='Tableau',Duration_in_Days__c=35);
+        insert c;
+        
+    }
+    
+    public void createBulkCourse(){
+        
+        List<Course__c> courses= new List<Course__c>();
+        //Course__c c= new Course__c(Name='Tableau',Duration_in_Days__c=35);
+        
+        for(Integer i=0;i<3;i++){
+            
+           Course__c c= new Course__c(Name='Tableau'+i,Duration_in_Days__c=35); 
+            courses.add(c);
+        }
+        
+        insert courses;
+        
+        
+    }
+    
+    //SOQL  --
+    //
+    //  SELECT ... FROM ... WHERE ...IN...LIKE... ORDER BY ... LIMIT
+    public void displayCourses(){
+        
+        List<Course__c> cs = [SELECT id,name FROM Course__c WHERE name LIKE 'Tabl%'];
+        
+       
+         List<Course__c> coursesUpdate= new List<Course__c>();
+        
+        system.debug('List size:::'+cs.size());
+        
+        for(Course__c c:cs){
+            
+            c.Duration_in_Days__c= 38;
+            coursesUpdate.add(c);
+        }
+        
+        update coursesUpdate;
+    }
+    
+    
+     public void deleteCourses(){
+        
+        List<Course__c> cs = [SELECT id,name FROM Course__c WHERE name LIKE 'Tabl%'];
+         List<Course__c> coursesDelete= new List<Course__c>();
+        
+        system.debug('List size:::'+cs.size());
+        
+        for(Course__c c:cs){
+            
+          
+            coursesDelete.add(c);
+        }
+        
+        delete coursesDelete;
+    }
+    
+   public void usingSetInCourses(){
+        
+        List<Account> cs = [SELECT id,name FROM Account WHERE name LIKE 'UN%'];
+        Set<Id> ids = new Set<Id>(); 
+       
+       for(Account c:cs){
+           
+           ids.add(c.Id);
+       }
+           
+       
+         List<Contact> contacts= [ Select name  from Contact where AccountId IN:ids];
+       
+       system.debug('Contact list::'+contacts.size());
+         system.debug('Contacts::'+contacts);
+        
+        
+    }
+
+
+
+}
